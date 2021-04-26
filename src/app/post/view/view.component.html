@@ -1,1 +1,4 @@
-<p>view works!</p>
+
+<ng-container *ngFor="let item of postList; let i = index">
+    <app-post [post] = "postList[i]"></app-post>
+    </ng-container>
