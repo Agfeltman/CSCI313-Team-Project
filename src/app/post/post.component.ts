@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Post} from '../model/post'; 
-
-
 
 @Component({
   selector: 'app-post',
@@ -9,8 +6,6 @@ import {Post} from '../model/post';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-
-  
 
   constructor() { }
 
