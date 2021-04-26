@@ -10,6 +10,8 @@ import {Post} from '../model/post';
 })
 export class PostComponent implements OnInit {
 
+  
+
   constructor() { }
 
   ngOnInit(): void {

@@ -8,6 +8,10 @@ import {Post} from '../model/post';
 })
 export class PostListComponent implements OnInit {
 
+  
+
+
+
   constructor() { }
 
   ngOnInit(): void {

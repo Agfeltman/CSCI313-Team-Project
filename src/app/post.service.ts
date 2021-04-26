@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import {Post} from './model/post';
+import {POSTS} from './post-data';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +8,9 @@ import { Injectable } from '@angular/core';
 export class PostService {
 
   constructor() { }
+
+  postList: Post[] = POSTS;
+
+
+
 }
