@@ -12,4 +12,5 @@ export class PostService {
   //Get posts from database and store them in an array here.
 
   constructor() { }
+
 }

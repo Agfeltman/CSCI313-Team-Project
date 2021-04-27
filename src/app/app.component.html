@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<div class="row">
+    <!-- Banner and sidebar HTML elements -->
+    <div class="col-sm-10">
+        <div class="container-fluid p-5 my-1 border">
+            <!--Banner here, link on top of banner image aligned left, don't know how to align it with the bottom of the container.-->
+            <h5>
+                <div style="text-align: left;">
+                    <a routerLink="">Worldshare</a>
+                </div>
+            </h5>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!--Sidebar I don't know how to add a border to this thing-->
+<div class="sidenav">
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto iure ipsum amet sunt fugiat suscipit officiis dignissimos, accusantium perspiciatis incidunt, praesentium eaque odio impedit nam, sed nihil. Cupiditate, officia vero?
+    </p>
+    <a [routerLink]="['posts/new']" class="btn btn-secondary">Create a Post</a>
+</div>

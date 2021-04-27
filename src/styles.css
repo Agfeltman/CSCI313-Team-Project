@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* The sidenav */
+.sidenav {
+    height: 100%;
+    width: 325px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 255, 255);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
