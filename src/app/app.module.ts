@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ViewComponent } from './post/view/view.component';
 import { NewComponent } from './post/new/new.component';
 import { PostComponent } from './post/post.component';
+import {ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PostComponent } from './post/post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

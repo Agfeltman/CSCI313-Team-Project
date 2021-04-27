@@ -13,4 +13,9 @@ export class PostService {
 
   constructor() { }
 
+
+  addPost(newPost: Post){
+    this.posts.push(newPost);
+  }
+
 }

@@ -1,1 +1,14 @@
-<p>new works!</p>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label>
+      Post Title:
+      <input type="text" id = "title" formControlName="title" required>
+    </label>
+  <br>
+    <label>
+      Image Link:
+      <input type="text" id = "imageUrl" formControlName="imageUrl" required>
+    </label>
+    </fieldset>
+    <input type="submit" value="Submit" [disabled] = "!postForm.valid">
+  </form>
