@@ -1,7 +1,6 @@
 export class Post {
-    public id?:number;
-    public title?:string;
     public timestamp?:Date;
+    public title?:string;
     public imagelink?:URL;
 
 }
