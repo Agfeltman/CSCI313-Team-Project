@@ -1,6 +1,7 @@
+import { getLocaleTimeFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Post} from 'src/app/models/post.model';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Post } from 'src/app/models/post.model';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -34,6 +35,7 @@ export class NewComponent implements OnInit {
 
 
   onSubmit(){
+
     this.newPost.title = this.postForm.get('title')!.value;
     this.newPost.imagelink = this.postForm.get('imageUrl')!.value;
     this.newPost.timestamp = new Date();
