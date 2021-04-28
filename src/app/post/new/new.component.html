@@ -1,14 +1,21 @@
-<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-  <fieldset>
-    <label>
-      Post Title:
-      <input type="text" id = "title" formControlName="title" required>
-    </label>
-  <br>
-    <label>
-      Image Link:
-      <input type="text" id = "imageUrl" formControlName="imageUrl" required>
-    </label>
-    </fieldset>
-    <input type="submit" value="Submit" [disabled] = "!postForm.valid">
-  </form>
+
+<div class="container-fluid border col-md-5 mx-auto">
+  <div style="text-align: center" >
+    <h1>Create a post</h1>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <label>
+          Post Title:
+          <input type="text" id = "title" formControlName="title" required>
+        </label>
+      <br>
+        <label>
+          Image Link:
+          <input type="text" id = "imageUrl" formControlName="imageUrl" required>
+        </label>
+        </fieldset>
+      <br>
+      <input type="submit" value="Submit" [disabled] = "!postForm.valid">
+    </form>
+  </div>
+</div>
