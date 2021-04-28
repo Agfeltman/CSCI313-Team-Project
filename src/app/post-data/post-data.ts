@@ -21,6 +21,6 @@ export const POSTS: any = [{
     timestamp: new Date(),
     imagelink: 'https://cdn.pixabay.com/photo/2018/03/11/20/42/mammals-3218028_1280.jpg',
     postDescription: "This is a picture of a fox in the woods.",
-    postComments:[""]
+    postComments:[]
 }
 ]
