@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Post} from 'src/app/models/post.model';
-
+import {PostService} from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-focus-post',
@@ -10,8 +10,9 @@ import {Post} from 'src/app/models/post.model';
 export class FocusPostComponent implements OnInit {
 
   @Input() post : any;
+  @Input() role: any;
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
   }

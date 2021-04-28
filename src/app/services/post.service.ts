@@ -19,4 +19,8 @@ export class PostService {
     this.posts.push(newPost);
   }
 
+  deletePost(postIndex: number){
+    this.posts.splice(postIndex,1);
+  }
+
 }
