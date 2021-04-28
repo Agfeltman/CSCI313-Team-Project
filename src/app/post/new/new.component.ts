@@ -23,13 +23,16 @@ export class NewComponent implements OnInit {
     id: -1,
     title: "",
     imagelink: "",
-    timestamp: new Date
+    timestamp: new Date,
+    postDescription: "",
+    postComments: []
   }
  
 
   postForm = new FormGroup({
     title: new FormControl('', Validators.required),
     imageUrl: new FormControl('', Validators.required),
+    description: new FormControl('')
   });
 
   
@@ -40,6 +43,8 @@ export class NewComponent implements OnInit {
 
     this.newPost.title = this.postForm.get('title')!.value;
     this.newPost.imagelink = this.postForm.get('imageUrl')!.value;
+    console.log(this.postForm.get('description')!.value);
+    this.newPost.postDescription = this.postForm.get('description')!.value;
     this.newPost.timestamp = new Date();
 
     this.postForm.reset();

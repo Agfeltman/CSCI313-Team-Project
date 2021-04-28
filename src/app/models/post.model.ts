@@ -5,4 +5,5 @@ export class Post {
     public title?:string;
     public imagelink?:string;
     public postDescription?: string;
+    public postComments?: string[];
 }
