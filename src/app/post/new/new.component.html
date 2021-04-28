@@ -1,4 +1,7 @@
 
+<a href="/" style="margin: 2%;"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+</svg></a>
 <div class="container-fluid border col-md-5 mx-auto">
   <div style="text-align: center" >
     <h1>Create a post</h1>
@@ -13,8 +16,13 @@
           Image Link:
           <input type="text" id = "imageUrl" formControlName="imageUrl" required>
         </label>
-        </fieldset>
       <br>
+      <label>
+        <div style="float: left; margin-right: 5px;">Description: </div>
+        <textarea style="resize: none;" rows="4" cols="23"></textarea>
+      </label>
+      </fieldset>
+    <br>
       <input type="submit" value="Submit" [disabled] = "!postForm.valid">
     </form>
   </div>

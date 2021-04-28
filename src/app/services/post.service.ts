@@ -15,6 +15,7 @@ export class PostService {
 
 
   addPost(newPost: Post){
+    newPost.id = this.posts.length+1;
     this.posts.push(newPost);
   }
 

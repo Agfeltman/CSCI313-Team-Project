@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 import { ViewComponent } from './post/view/view.component';
 import { NewComponent } from './post/new/new.component';
 import { PostComponent } from './post/post.component';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
+import { FocusPostComponent } from './post/focus-post/focus-post.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewComponent,
     NewComponent,
-    PostComponent
+    PostComponent,
+    FocusPostComponent
   ],
   imports: [
     BrowserModule,

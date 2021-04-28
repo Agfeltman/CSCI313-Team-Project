@@ -13,11 +13,17 @@ export class ViewComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   postList : Post[] = this.postService.posts;
-
-  
+  focus: boolean = false;
+  selectedPost: Post = {};
 
   ngOnInit(): void {
 
+  }
+
+
+  focusPost(newPost: Post){
+    this.focus = true;
+    this.selectedPost = newPost;
   }
 
 }
