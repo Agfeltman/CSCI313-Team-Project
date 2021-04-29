@@ -1,9 +1,13 @@
-
-<div class="container-fluid my-1 border">
-   postTitle:{{post.title}}
-   <br>
-   postTimeStamp:{{post.timestamp}}
-   <br>
-   postImage:<img [src] ="post.imagelink">
+<div class="container-fluid my-1 border border-secondary">
+   <div class="row">
+      <div class="col-sm-4 col-lg-3 p-3 fill" style="height:200px">
+         <img [src] ="post.imagelink">
+      </div>
+      <div class="col-sm-8 col-lg-9 h-100">
+         postTitle:{{post.title}}
+         <br>
+         postTimeStamp:{{post.timestamp}}
+         <br>
+      </div>
+   </div>
 </div>
-

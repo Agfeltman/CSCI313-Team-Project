@@ -1,24 +1,25 @@
-<div class="row">
-    <!-- Banner and sidebar HTML elements -->
-    <div class="col-sm-10">
-        <div class="container-fluid p-5 my-1 border">
-            <!--Banner here, link on top of banner image aligned left, don't know how to align it with the bottom of the container.-->
-            <h5>
-                <div style="text-align: left;">
+<div class="container">
+    <div class="row">
+        <div class="container px-5 py-4 my-3 border" style="background-color:#abdbe3">
+            <div style="text-align: left;">
+                <h3 style="margin-bottom:0">
                     <a routerLink="">Worldshare</a>
-                </div>
-            </h5>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 order-2 order-md-1">
+            <div class="">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <div class="col-md-3 order-1 order-md-2 py-3" style="background-color:#f8f9fa">
+            <!-- <div class="sidenav" style="border:solid black 4px"> -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet tempore reiciendis corrupti ullam dolor vitae ad cumque quaerat aut quia dolore, minus, at enim atque dolorum, omnis maiores dolorem nostrum?</p>
+                <a [routerLink]="['posts/new']" class="btn btn-secondary btn-block">Create a Post</a>
+            <!-- </div> -->
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-10">
-        <router-outlet></router-outlet>
-    </div>
-</div>
 
-<!-- Added a border -->
-<div class="sidenav" style="border:solid rgb(222,226,230) 2px">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet tempore reiciendis corrupti ullam dolor vitae ad cumque quaerat aut quia dolore, minus, at enim atque dolorum, omnis maiores dolorem nostrum?</p>
-    <a [routerLink]="['posts/new']" class="btn btn-secondary btn-lg btn-block">Create a Post</a>
-</div>
