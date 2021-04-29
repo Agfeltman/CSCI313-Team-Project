@@ -16,7 +16,7 @@ export class PostService {
 
 
   addPost(newPost: Post){
-    newPost.id = this.numIds++;
+    newPost.id = newPost.timestamp?.getTime(); 
     this.posts.push(newPost);
   }
 
