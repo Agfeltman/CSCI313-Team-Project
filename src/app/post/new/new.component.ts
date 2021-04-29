@@ -25,7 +25,8 @@ export class NewComponent implements OnInit {
     imagelink: "",
     timestamp: new Date,
     postDescription: "",
-    postComments: []
+    postComments: [],
+    vote: 0
   }
  
 
