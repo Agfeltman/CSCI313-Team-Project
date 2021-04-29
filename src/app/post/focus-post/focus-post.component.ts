@@ -12,9 +12,11 @@ export class FocusPostComponent implements OnInit {
 
   @Input() post: any;
   @Input() role: any;
-
+  
   comments: string[] = [];
  
+  votedGood: boolean = false;
+  votedBad: boolean = false;
 
   constructor(private postService: PostService) {
    }
@@ -32,5 +34,25 @@ export class FocusPostComponent implements OnInit {
     this.post.postComments.push(this.commentForm.get('newComment')!.value);
     this.commentForm.reset();
   }
+
+  //upvote and downvote methods
+  upVote(){
+    if(!(this.votedGood))
+    {
+      this.post.vote++;
+      this.votedGood = true;
+      this.votedBad = false;
+    }
+    
+  }
+  downVote(){
+    if(!(this.votedBad))
+    {
+      this.post.vote--;
+      this.votedGood = false;
+      this.votedBad = true;
+    }
+  }
+
 
 }
