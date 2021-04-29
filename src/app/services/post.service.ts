@@ -9,13 +9,14 @@ import {POSTS} from '../post-data/post-data'; //Temporary data set for testing
 export class PostService {
 
   posts: Post[] = POSTS;
+  numIds: number = POSTS.length+1;
   //Get posts from database and store them in an array here.
 
   constructor() { }
 
 
   addPost(newPost: Post){
-    newPost.id = this.posts.length+1;
+    newPost.id = this.numIds++;
     this.posts.push(newPost);
   }
 
