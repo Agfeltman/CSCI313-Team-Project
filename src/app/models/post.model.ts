@@ -6,4 +6,5 @@ export class Post {
     public imagelink?:string;
     public postDescription?: string;
     public postComments?: string[];
+    public vote?: number;
 }
