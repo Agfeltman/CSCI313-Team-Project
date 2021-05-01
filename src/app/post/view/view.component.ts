@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 import {Post} from 'src/app/models/post.model';
 import {PostService} from 'src/app/services/post.service';
 
@@ -12,7 +13,7 @@ export class ViewComponent implements OnInit {
 
   
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private router: Router) { }
 
   postList : Post[] = this.postService.posts;
   focus: boolean = false;
@@ -25,8 +26,8 @@ export class ViewComponent implements OnInit {
 
 
   focusPost(newPost: Post){
-    this.focus = true;
-    this.selectedPost = newPost;
+    //this.focus = true;
+    this.router.navigate(['/post/focus', newPost.id]);
   }
 
   switchRole(){

@@ -1,7 +1,10 @@
+import { findLast } from '@angular/compiler/src/directive_resolver';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Post} from 'src/app/models/post.model';
 import {PostService} from 'src/app/services/post.service';
+import {ActivatedRoute, Router,ParamMap} from '@angular/router';
+
 
 @Component({
   selector: 'app-focus-post',
@@ -11,20 +14,33 @@ import {PostService} from 'src/app/services/post.service';
 export class FocusPostComponent implements OnInit {
 
   @Input() post: any;
-  @Input() role: any;
   
+
+
+  inputId: any = 0;
   comments: string[] = [];
  
   votedGood: boolean = false;
   votedBad: boolean = false;
 
-  constructor(private postService: PostService) {
+
+
+  constructor(private postService: PostService, private activatedRoute:ActivatedRoute) {
+    
+
    }
 
   ngOnInit(): void {
+    this.inputId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.post = this.postService.getPost(this.inputId);
+    console.log("Input ID:" + this.inputId);
+
+
     this.comments = this.post.postComments;
-    console.log(this.comments[0]);
   }
+
+
+
 
   commentForm = new FormGroup({
     newComment: new FormControl('', Validators.required),
@@ -53,6 +69,8 @@ export class FocusPostComponent implements OnInit {
       this.votedBad = true;
     }
   }
+
+  
 
 
 }
