@@ -25,7 +25,7 @@ export class NewComponent implements OnInit {
     imagelink: "",
     timestamp: new Date,
     postDescription: "",
-    postComments: [],
+    postComments: [""],
     vote: 0
   }
  
@@ -49,12 +49,15 @@ export class NewComponent implements OnInit {
     this.newPost.timestamp = new Date();
 
     this.postForm.reset();
-    this.postService.addPost(this.newPost);
+    this.postService.addPost(this.newPost).subscribe(data =>this.fetchData());
     
     this.router.navigateByUrl('/');
 
   }
 
+  fetchData(){
+    this.postService.getPostData();
+  }
 
 
 }

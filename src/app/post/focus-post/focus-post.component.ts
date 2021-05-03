@@ -13,16 +13,26 @@ import {ActivatedRoute, Router,ParamMap} from '@angular/router';
 })
 export class FocusPostComponent implements OnInit {
 
-  @Input() post: any;
-  
+  //@Input() post: any;
+  postList: Post[] = [];
 
+  // post: any = {
+  //   id: -1,
+  //   title: "Tets",
+  //   imagelink: "",
+  //   timestamp: new Date,
+  //   postDescription: "",
+  //   postComments: ["Hello"],
+  //   vote: 0
+  // }
 
   inputId: any = 0;
-  comments: string[] = [];
+  comments: string[] = ["Hello"];
  
   votedGood: boolean = false;
   votedBad: boolean = false;
 
+  post: any = {};
 
 
   constructor(private postService: PostService, private activatedRoute:ActivatedRoute) {
@@ -31,12 +41,15 @@ export class FocusPostComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.inputId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.post = this.postService.getPost(this.inputId);
-    console.log("Input ID:" + this.inputId);
+    //this.postService.getPostData().subscribe(data => (this.postList = data));
 
 
-    this.comments = this.post.postComments;
+    let inputId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    
+    this.post = this.postService.getPost(inputId);
+
+  
+    this.comments = this.post?.postComments!;
   }
 
 
@@ -69,8 +82,4 @@ export class FocusPostComponent implements OnInit {
       this.votedBad = true;
     }
   }
-
-  
-
-
 }

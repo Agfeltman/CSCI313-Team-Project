@@ -21,7 +21,7 @@ export class ViewComponent implements OnInit {
   role: string = "user";
 
   ngOnInit(): void {
-
+    this.fetchData();
   }
 
 
@@ -47,8 +47,11 @@ export class ViewComponent implements OnInit {
   }
 
   deletePost(postIndex: number){
-    this.postService.deletePost(postIndex);
+    this.postService.deletePost(postIndex).subscribe();
   }
 
+  fetchData(){
+    this.postService.getPostData().subscribe(data => (this.postList = data));
+  }
 
 }

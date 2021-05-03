@@ -8,6 +8,8 @@ import { NewComponent } from './post/new/new.component';
 import { PostComponent } from './post/post.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FocusPostComponent } from './post/focus-post/focus-post.component'
+import{HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { FocusPostComponent } from './post/focus-post/focus-post.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
