@@ -41,12 +41,10 @@ export class FocusPostComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    //this.postService.getPostData().subscribe(data => (this.postList = data));
-
 
     let inputId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     
-    this.post = this.postService.getPost(inputId);
+    this.postService.getPost(inputId).subscribe(data => this.post = data);
 
   
     this.comments = this.post?.postComments!;
@@ -60,8 +58,16 @@ export class FocusPostComponent implements OnInit {
   });
 
   onSubmit(){
-    this.post.postComments.push(this.commentForm.get('newComment')!.value);
+    let newComment:string = this.commentForm.get('newComment')!.value;
+
+    if(!this.post.postComments)
+      this.post.postComments = [newComment];
+    else{
+    this.post.postComments.push(newComment);
+    this.comments = this.post.postComments;
+    }
     this.commentForm.reset();
+    this.postService.updatePost(this.post).subscribe();
   }
 
   //upvote and downvote methods
@@ -72,6 +78,7 @@ export class FocusPostComponent implements OnInit {
       this.votedGood = true;
       this.votedBad = false;
     }
+    this.postService.updatePost(this.post).subscribe();
     
   }
   downVote(){
@@ -81,5 +88,7 @@ export class FocusPostComponent implements OnInit {
       this.votedGood = false;
       this.votedBad = true;
     }
+    this.postService.updatePost(this.post).subscribe();
+
   }
 }

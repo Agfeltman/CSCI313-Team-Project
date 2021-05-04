@@ -17,7 +17,7 @@
     <h2>Comments:</h2>
     <hr>
     <ul>
-      <li *ngFor="let entry of comments; let i = index">{{this.post.postComments[i]}}</li>
+      <li *ngFor="let entry of this.post.postComments; let i = index">{{this.post.postComments[i]}}</li>
     </ul>
 <hr>
     <div class="container-fluid border">

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from 'src/app/models/post.model';
 import { PostService } from 'src/app/services/post.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-new',
@@ -25,7 +25,7 @@ export class NewComponent implements OnInit {
     imagelink: "",
     timestamp: new Date,
     postDescription: "",
-    postComments: [""],
+    postComments: [],
     vote: 0
   }
  
@@ -51,7 +51,7 @@ export class NewComponent implements OnInit {
     this.postForm.reset();
     this.postService.addPost(this.newPost).subscribe(data =>this.fetchData());
     
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl("/");
 
   }
 
