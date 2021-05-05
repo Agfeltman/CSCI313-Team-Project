@@ -3,27 +3,29 @@
   <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
 </svg></a>
 <div class="container-fluid border col-md-8 mx-auto">
-  <div class="p-3" >
-    <h1>Create a post</h1>
-    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-      <fieldset>
+  <div class="p-3 d-flex justify-content-center" >
+    <div class="my-auto">
+      <h1>Create a post</h1>
+      <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <label>
+            Post Title:
+            <input type="text" id = "title" formControlName="title" required>
+          </label>
+        <br>
+          <label>
+            Image Link:
+            <input type="text" id = "imageUrl" formControlName="imageUrl" alt = "No Image Found" required>
+          </label>
+        <br>
         <label>
-          Post Title:
-          <input type="text" id = "title" formControlName="title" required>
+          <div style="float: left; margin-right: 5px;">Description: </div>
+          <textarea style="resize: none;" rows="4" cols="23" formControlName="description"></textarea>
         </label>
+        </fieldset>
       <br>
-        <label>
-          Image Link:
-          <input type="text" id = "imageUrl" formControlName="imageUrl" alt = "No Image Found" required>
-        </label>
-      <br>
-      <label>
-        <div style="float: left; margin-right: 5px;">Description: </div>
-        <textarea style="resize: none;" rows="4" cols="23" formControlName="description"></textarea>
-      </label>
-      </fieldset>
-    <br>
-      <input type="submit" value="Submit" [disabled] = "!postForm.valid">
-    </form>
+        <input type="submit" value="Submit" [disabled] = "!postForm.valid">
+      </form>
+    </div>
   </div>
 </div>
