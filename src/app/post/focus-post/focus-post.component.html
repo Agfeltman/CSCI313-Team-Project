@@ -1,42 +1,39 @@
 <a [routerLink] = "['/']" style="margin: 2%;"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
 </svg></a>
-  <div class="container-fluid border col-md-5 mx-auto" style="padding: 5%;">
-    <div style="text-align: center" >
-        <h2 style="text-align: center;">{{this.post.title}}</h2>
+<div class="container-fluid border col-md-8 mx-auto" style="padding: 5%;">
+  <div style="text-align: center" >
+      <h2 style="text-align: center;">{{this.post.title}}</h2>
+      <div class="my-2">
         <img [src] = "this.post.imagelink">
-        <p>{{post.postDescription}}</p>
-    </div>
+      </div>
+      <p>{{post.postDescription}}</p>
+  </div>
 
-    <div>
-      <p>Score: {{this.post.vote}}</p>
-      <button class="btn btn-outline-success" (click)="upVote()">Like</button>
-      <button class="btn btn-outline-danger" (click)="downVote()">Dislike</button>
-    </div>
-
+  <div class="votes">
+    <button id="upvoteBtn" class="btn btn-outline-success" (click)="upVote()">/\</button>
+    <p class="px-2">{{this.post.vote}}</p>
+    <button id="downvoteBtn"  class="btn btn-outline-danger" (click)="downVote()">\/</button>
+  </div>
+<hr>
+  <div class="container-fluid p-3">
     <h2>Comments:</h2>
-    <hr>
     <ul>
       <li *ngFor="let entry of this.post.postComments; let i = index">{{this.post.postComments[i]}}</li>
     </ul>
+  </div>
 <hr>
-    <div class="container-fluid border">
-      <div style="text-align: center" >
-        <h1>Add a Comment</h1>
-        <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-          <fieldset>
-            <label>
-              <div style="float: left; margin-right: 5px;">Comment: </div>
-              <textarea style="resize: none;" rows="4" cols="23" formControlName="newComment"></textarea>
-            </label>
-          
-          </fieldset>
-        <br>
-          <input type="submit" value="Submit" [disabled] = "!commentForm.valid">
-        </form>
-      </div>
+  <div class="container-fluid p-3">
+      <h3>Add a Comment</h3>
+      <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <label>
+            <div style="float: left; margin-right: 5px;">Comment: </div>
+            <textarea style="resize: none;" rows="4" cols="23" formControlName="newComment"></textarea>
+          </label>
+        </fieldset>
+      <br>
+        <input type="submit" value="Submit" [disabled] = "!commentForm.valid">
+      </form>
     </div>
-
-    
-
-
+</div>

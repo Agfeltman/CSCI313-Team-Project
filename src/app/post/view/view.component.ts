@@ -33,15 +33,15 @@ export class ViewComponent implements OnInit {
   switchRole(){
     if(this.role == "user"){
       this.role = "admin";
-    (<HTMLInputElement>document.getElementById("roleBtn")).innerHTML = "Switch to User";
-    (<HTMLInputElement>document.getElementById("roleBtn")).classList.replace("btn-danger", "btn-primary");
+      (<HTMLInputElement>document.getElementById("roleBtn")).innerHTML = "Switch to User";
+      (<HTMLInputElement>document.getElementById("roleBtn")).classList.replace("btn-danger", "btn-primary");
 
-    console.log("Button Pushed");
+      console.log("Button Pushed");
     }
     else{
       this.role = "user";
       (<HTMLInputElement>document.getElementById("roleBtn")).innerHTML = "Switch to Admin";
-    (<HTMLInputElement>document.getElementById("roleBtn")).classList.replace("btn-primary", "btn-danger");
+      (<HTMLInputElement>document.getElementById("roleBtn")).classList.replace("btn-primary", "btn-danger");
 
     }
   }

@@ -72,21 +72,49 @@ export class FocusPostComponent implements OnInit {
 
   //upvote and downvote methods
   upVote(){
-    if(!(this.votedGood))
+    if (!this.votedGood && !this.votedBad)
     {
       this.post.vote++;
       this.votedGood = true;
+      (<HTMLInputElement>document.getElementById("upvoteBtn")).classList.replace("btn-outline-success", "btn-success");
+    }
+    else if (!this.votedGood && this.votedBad)
+    {
+      this.post.vote += 2;
+      this.votedGood = true;
+      (<HTMLInputElement>document.getElementById("upvoteBtn")).classList.replace("btn-outline-success", "btn-success");
       this.votedBad = false;
+      (<HTMLInputElement>document.getElementById("downvoteBtn")).classList.replace("btn-danger", "btn-outline-danger");
+    }
+    else if (this.votedGood)
+    {
+      this.post.vote--;
+      this.votedGood = false;
+      (<HTMLInputElement>document.getElementById("upvoteBtn")).classList.replace("btn-success", "btn-outline-success");
     }
     this.postService.updatePost(this.post).subscribe();
     
   }
   downVote(){
-    if(!(this.votedBad))
+    if (!this.votedGood && !this.votedBad)
     {
       this.post.vote--;
-      this.votedGood = false;
       this.votedBad = true;
+      (<HTMLInputElement>document.getElementById("downvoteBtn")).classList.replace("btn-outline-danger", "btn-danger");
+    }
+    else if (this.votedGood && !this.votedBad)
+    {
+      this.post.vote -= 2;
+      this.votedGood = false;
+      (<HTMLInputElement>document.getElementById("upvoteBtn")).classList.replace("btn-success", "btn-outline-success");
+      this.votedBad = true;
+      (<HTMLInputElement>document.getElementById("downvoteBtn")).classList.replace("btn-outline-danger", "btn-danger");
+    }
+    else if (!this.votedGood && this.votedBad)
+    {
+      this.post.vote++;
+      this.votedBad = false;
+      (<HTMLInputElement>document.getElementById("downvoteBtn")).classList.replace("btn-danger", "btn-outline-danger");
     }
     this.postService.updatePost(this.post).subscribe();
 
