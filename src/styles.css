@@ -1,15 +1,8 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-
-/* The sidenav
-.sidenav {
-    height: 100%;
-    width: 20%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgb(255, 255, 255);
-    overflow-x: hidden;
-    padding-top: 20px;
-  } */
-  
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+h3, p, button {
+  font-family: 'Roboto', sans-serif;
+}
+h3 {
+  font-weight: bold;
+}
